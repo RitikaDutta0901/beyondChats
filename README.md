@@ -81,6 +81,13 @@ dataFlow diagram=[!dataflow](dataflow.png)
 
     Frontend Demo: https://beyond-chats-azure.vercel.app/
 
-    Backend API: [Insert your Render/Heroku link here]
+    Backend API:https://beyondchats-gvsw.onrender.com
 
 Note to Evaluator: The dashboard differentiates between original and AI-enhanced articles using color-coded badges. You can trigger a new update cycle via the /api/articles/update-articles endpoint.
+
+
+Before v/s After
+Before=[!before](Before.png)
+
+After AI enhancement
+After=[!after](After.png)
