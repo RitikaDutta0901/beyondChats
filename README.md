@@ -14,7 +14,6 @@ A full-stack application designed to automatically scrape blog articles from Bey
     Intelligent Rate Limiting: Advanced handling of Google Gemini Free Tier limits (Error 429) using Exponential Backoff and Sequential Processing.
 
     Real-time Dashboard: A modern React frontend that connects to the PostgreSQL database to display articles with "AI Updated" badges and verified source links.
-
 🛠️ Tech Stack
 
     Frontend: React.js, Axios, Lucide-React (Icons), CSS3 (Responsive Grid).
@@ -77,10 +76,10 @@ During development, strict rate limits from the Gemini API ("limit: 0" on new ac
     Cooldown Mechanism: Integrated a mandatory 30–60 second delay between API calls to comply with the Free Tier quota.
 
     Key Rotation: Implemented "Round Robin" logic to automatically switch between multiple API keys.
-
+dataFlow diagram=[!dataflow](dataflow.png)
 🔗 Live Links
 
-    Frontend Demo: [Insert your Vercel/Netlify link here]
+    Frontend Demo: https://beyond-chats-azure.vercel.app/
 
     Backend API: [Insert your Render/Heroku link here]
 
