@@ -1,21 +1,31 @@
 const express = require('express');
-const cors = require('cors'); // CORS import kiya
+const cors = require('cors'); 
 const dotenv = require('dotenv');
 const articleRoutes = require('./routes/articleRoutes');
+// --- NAYA IMPORT YAHAN HAI (PHASE 1) ---
+const { scrapeArticles } = require('./utils/scraper'); 
 
 dotenv.config();
 
 const app = express();
 
 // --- MIDDLEWARE SECTION ---
-// Sabse pehle CORS lagana hai taaki Frontend (3000) Backend (5000) se baat kar sake
 app.use(cors()); 
-
-// Body parser taaki JSON data handle ho sake
 app.use(express.json());
 
 // --- ROUTES SECTION ---
 app.use('/api/articles', articleRoutes);
+
+// --- NAYA SCRAPE ROUTE (PHASE 1 TRIGGER) ---
+// Isse aap browser mein hit karke original data fetch kar sakti hain
+app.get('/scrape-blogs', async (req, res) => {
+    try {
+        await scrapeArticles();
+        res.json({ message: "Scraping completed and original data stored! ✅" });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 // Root route (Testing ke liye)
 app.get('/', (req, res) => {
